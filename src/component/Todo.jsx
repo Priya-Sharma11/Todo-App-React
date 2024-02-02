@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AppName from "./AppName";
+import DisplayItems from "./DisplayItems";
 
 const Todo = () => {
   const[addItems,setAddItems]= useState("");
@@ -45,11 +46,8 @@ const dateEvent=(e)=>{
                     {addItems}
                   </li> */}
                   {items.map((item,index)=>{
-                    return <li key={index}>
-                      <span>{item.addItems} </span>
-                      <span>{item.addDate}</span>
 
-                    </li>
+                 return <DisplayItems addItem={item.addItems} addDate={item.addDate} index={index}/>
                   })}
                   
                 </ol>
