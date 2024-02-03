@@ -15,7 +15,7 @@ const itemEvent=(e)=>{
 const dateEvent=(e)=>{
   setAddDate(e.target.value);
 }
-  const handleOnClick=(event)=>{
+  const handleAddItem=(event)=>{
     //console.log(event.target.value);
     //console.log("Clicked");
     setItem((oldItems)=>{
@@ -24,8 +24,11 @@ const dateEvent=(e)=>{
 
     setAddItems("");
     setAddDate("");
-    
   }
+  const handleRemoveItems=(id)=>{
+    setItem((oldItems)=>oldItems.filter((item,index)=>index !== id))
+  }
+
   return (
     <>
       <center className="todo-container">
@@ -39,16 +42,22 @@ const dateEvent=(e)=>{
 
               <input type="date" value={addDate} onChange={dateEvent}/>
 
-              <button onClick={handleOnClick}>ADD</button>
+              <button className="add-button" onClick={handleAddItem}>ADD</button>
               
                 <ol>
                  {/*  <li>
                     {addItems}
                   </li> */}
                   {items.map((item,index)=>{
+                 return <DisplayItems 
+                 addItem={item.addItems} 
+                 addDate={item.addDate} 
+                 index={index} 
+                 id={index} 
+                 onSelect={handleRemoveItems}/>
 
-                 return <DisplayItems addItem={item.addItems} addDate={item.addDate} index={index}/>
-                  })}
+                  })
+                  }
                   
                 </ol>
                 
