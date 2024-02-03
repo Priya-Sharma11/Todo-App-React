@@ -5,7 +5,7 @@ Prerequisites
 Make sure you have Node.js and npm installed on your machine.
 
 Installation
-Clone the repository: git clone https://github.com/your-username/your-todo-app.git
+Clone the repository: git clone https://github.com/Priya-Sharma11/Todo-App-React.git
 Navigate to the project directory: cd todo-list
 
 Install dependencies: npm install
