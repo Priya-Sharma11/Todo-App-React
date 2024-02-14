@@ -1,6 +1,6 @@
-#TODO-APP
+TODO-APP
 
-##A simple Todo app built with ReactJS.
+A simple Todo app built with ReactJS.
 
 
 Prerequisites
